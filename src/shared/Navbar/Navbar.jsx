@@ -96,6 +96,18 @@ const Navbar = () => {
                 Login
               </Button>
             </Link>
+            <Link to="/register">
+              <Button
+                className="bg-[#FF26A2] font-grotesk"
+                style={{
+                  textTransform: "capitalize",
+                  fontSize: "16px",
+                }}
+                size="md"
+              >
+                Register
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
