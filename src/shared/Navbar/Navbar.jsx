@@ -1,7 +1,17 @@
-import { Button } from "@material-tailwind/react";
+import { Button, Tooltip } from "@material-tailwind/react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const { user, logoutUser } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logoutUser().then(() => {
+      toast.success("Logout Successfully");
+    });
+  };
   return (
     <div>
       <div className="navbar bg-transparent backdrop-blur-md h-20 px-0 md:px-4 lg:px-12  text-black">
@@ -84,30 +94,63 @@ const Navbar = () => {
         </div>
         <div className="navbar-end pr-6 lg:pr-0">
           <div className="flex items-center gap-3 lg:flex">
-            <Link to="/login">
-              <Button
-                className="bg-[#FF26A2] font-grotesk"
-                style={{
-                  textTransform: "capitalize",
-                  fontSize: "16px",
-                }}
-                size="md"
-              >
-                Login
-              </Button>
-            </Link>
-            <Link to="/register">
-              <Button
-                className="bg-[#FF26A2] font-grotesk"
-                style={{
-                  textTransform: "capitalize",
-                  fontSize: "16px",
-                }}
-                size="md"
-              >
-                Register
-              </Button>
-            </Link>
+            {user ? (
+              <>
+                <div className="avatar">
+                  <div
+                    className={`w-10 rounded-full border-2 border-[#FF26A2]`}
+                  >
+                    <Tooltip
+                      className="bg-[#FF26A2] font-bold"
+                      content={user.displayName}
+                      placement="bottom"
+                    >
+                      <span>
+                        <img src={user?.photoURL ? user?.photoURL : ""} />
+                      </span>
+                    </Tooltip>
+                  </div>
+                </div>
+                <Button
+                  onClick={handleLogout}
+                  className="bg-[#FF26A2] font-grotesk"
+                  style={{
+                    textTransform: "capitalize",
+                    fontSize: "16px",
+                  }}
+                  size="md"
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <Button
+                    className="bg-[#FF26A2] font-grotesk"
+                    style={{
+                      textTransform: "capitalize",
+                      fontSize: "16px",
+                    }}
+                    size="md"
+                  >
+                    Login
+                  </Button>
+                </Link>
+                <Link to="/register">
+                  <Button
+                    className="bg-[#FF26A2] font-grotesk md:flex hidden"
+                    style={{
+                      textTransform: "capitalize",
+                      fontSize: "16px",
+                    }}
+                    size="md"
+                  >
+                    Register
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

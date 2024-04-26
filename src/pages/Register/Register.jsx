@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const {registerUser} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { registerUser, updateProfileInfo } = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -25,16 +26,17 @@ const Register = () => {
     }
 
     registerUser(email, password)
-    .then(result=>{
-      console.log(result.user);
-      toast.success("Register Successfully")
-    })
-    .catch(error=>{
-      console.log(error.message);
-      toast.error(`${error?.message?.slice(10)}`)
-    })
-
-
+      .then((result) => {
+        updateProfileInfo(name, photo).then(() => {
+          console.log(result.user);
+          navigate("/")
+          toast.success("Register Successfully");
+        });
+      })
+      .catch((error) => {
+        console.log(error.message);
+        toast.error(`${error?.message?.slice(10)}`);
+      });
   };
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
