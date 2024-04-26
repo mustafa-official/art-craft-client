@@ -93,9 +93,8 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-end pr-6 lg:pr-0">
-          <div className="flex items-center gap-3 lg:flex">
-            {user ? (
-              <>
+        <div className="flex items-center gap-3 lg:flex">
+              {user && (
                 <div className="avatar">
                   <div
                     className={`w-10 rounded-full border-2 border-[#FF26A2]`}
@@ -106,52 +105,45 @@ const Navbar = () => {
                       placement="bottom"
                     >
                       <span>
-                        <img src={user?.photoURL ? user?.photoURL : ""} />
+                        <img
+                          src={user?.photoURL ? user?.photoURL : ""}
+                        />
                       </span>
                     </Tooltip>
                   </div>
                 </div>
-                <Button
-                  onClick={handleLogout}
-                  className="bg-[#FF26A2] font-grotesk"
-                  style={{
-                    textTransform: "capitalize",
-                    fontSize: "16px",
-                  }}
-                  size="md"
-                >
-                  Logout
-                </Button>
-              </>
-            ) : (
-              <>
-                <Link to="/login">
+              )}
+              {user ? (
+                <>
                   <Button
                     className="bg-[#FF26A2] font-grotesk"
+                    onClick={handleLogout}
                     style={{
                       textTransform: "capitalize",
                       fontSize: "16px",
                     }}
                     size="md"
                   >
-                    Login
+                    Logout
                   </Button>
-                </Link>
-                <Link to="/register">
-                  <Button
-                    className="bg-[#FF26A2] font-grotesk md:flex hidden"
-                    style={{
-                      textTransform: "capitalize",
-                      fontSize: "16px",
-                    }}
-                    size="md"
-                  >
-                    Register
-                  </Button>
-                </Link>
-              </>
-            )}
-          </div>
+                </>
+              ) : (
+                <>
+                  <Link to="/login">
+                    <Button
+                      className="bg-[#FF26A2] font-grotesk"
+                      style={{
+                        textTransform: "capitalize",
+                        fontSize: "16px",
+                      }}
+                      size="md"
+                    >
+                      Login
+                    </Button>
+                  </Link>
+                </>
+              )}
+            </div>
         </div>
       </div>
     </div>

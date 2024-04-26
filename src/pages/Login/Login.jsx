@@ -4,7 +4,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser, googleLogin, githubLogin, setUser, user } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const handleLoginUser = (e) => {
     e.preventDefault();
@@ -14,13 +15,29 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         console.log(result.user);
-        navigate("/")
+        navigate("/");
         toast.success("Login Successfully");
       })
       .catch((error) => {
         console.log(error.message);
         toast.error(`${error.message.slice(10)}`);
       });
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin().then((result) => {
+      toast.success("Login Successfully");
+      navigate("/");
+      setUser(...user, result.photoURL);
+      // photoURL
+    });
+  };
+
+  const handleGithubLogin = () => {
+    githubLogin().then(() => {
+      toast.success("Login Successfully");
+      navigate("/");
+    });
   };
   return (
     <div className="px-5 md:px-10 pt-1 pb-8 lg:px-14 text-black">
@@ -60,7 +77,11 @@ const Login = () => {
           <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
         </div>
         <div className="flex justify-center space-x-4">
-          <button aria-label="Log in with Google" className="p-3 rounded-sm">
+          <button
+            onClick={handleGoogleLogin}
+            aria-label="Log in with Google"
+            className="p-3 rounded-sm"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
@@ -70,7 +91,7 @@ const Login = () => {
             </svg>
           </button>
 
-          <button aria-label="Log in with GitHub" className="p-3 rounded-sm">
+          <button onClick={handleGithubLogin} aria-label="Log in with GitHub" className="p-3 rounded-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
