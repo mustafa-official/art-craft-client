@@ -1,0 +1,42 @@
+import { Pagination, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/bundle";
+import SliderOne from "./SliderOne/SliderOne";
+import SliderTwo from "./SliderTwo/SliderTwo";
+import SliderThree from "./SliderThree/SliderThree";
+
+const Banner = () => {
+    return (
+        <div>
+      
+      <Swiper
+      id="swiper-color"
+        slidesPerView={1}
+        spaceBetween={30}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+        style={{
+          zIndex:0,
+        }}
+      >
+        <SwiperSlide>
+          <SliderOne></SliderOne>
+        </SwiperSlide>
+        <SwiperSlide>
+          <SliderTwo></SliderTwo>
+        </SwiperSlide>
+        <SwiperSlide>
+          <SliderThree></SliderThree>
+        </SwiperSlide>
+      </Swiper>
+    </div>
+    );
+};
+
+export default Banner;
