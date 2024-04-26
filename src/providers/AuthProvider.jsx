@@ -17,9 +17,9 @@ const AuthProvider = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
   const [user, setUser] = useState(null);
-
-  console.log(user);
   const [loading, setLoading] = useState(true);
+  console.log(user);
+
   //register User
   const registerUser = (email, password) => {
     setLoading(true);
@@ -79,7 +79,7 @@ const AuthProvider = ({ children }) => {
     logoutUser,
     googleLogin,
     setUser,
-    githubLogin
+    githubLogin,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

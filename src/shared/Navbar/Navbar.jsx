@@ -93,57 +93,53 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-end pr-6 lg:pr-0">
-        <div className="flex items-center gap-3 lg:flex">
-              {user && (
-                <div className="avatar">
-                  <div
-                    className={`w-10 rounded-full border-2 border-[#FF26A2]`}
+          <div className="flex items-center gap-3 lg:flex">
+            {user && (
+              <div className="avatar">
+                <div className={`w-10 rounded-full border-2 border-[#FF26A2]`}>
+                  <Tooltip
+                    className="bg-[#FF26A2] font-bold"
+                    content={user.displayName}
+                    placement="bottom"
                   >
-                    <Tooltip
-                      className="bg-[#FF26A2] font-bold"
-                      content={user.displayName}
-                      placement="bottom"
-                    >
-                      <span>
-                        <img
-                          src={user?.photoURL ? user?.photoURL : ""}
-                        />
-                      </span>
-                    </Tooltip>
-                  </div>
+                    <span>
+                      <img src={user?.photoURL ? user?.photoURL : ""} />
+                    </span>
+                  </Tooltip>
                 </div>
-              )}
-              {user ? (
-                <>
+              </div>
+            )}
+            {user ? (
+              <>
+                <Button
+                  className="bg-[#FF26A2] font-grotesk"
+                  onClick={handleLogout}
+                  style={{
+                    textTransform: "capitalize",
+                    fontSize: "16px",
+                  }}
+                  size="md"
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
                   <Button
                     className="bg-[#FF26A2] font-grotesk"
-                    onClick={handleLogout}
                     style={{
                       textTransform: "capitalize",
                       fontSize: "16px",
                     }}
                     size="md"
                   >
-                    Logout
+                    Login
                   </Button>
-                </>
-              ) : (
-                <>
-                  <Link to="/login">
-                    <Button
-                      className="bg-[#FF26A2] font-grotesk"
-                      style={{
-                        textTransform: "capitalize",
-                        fontSize: "16px",
-                      }}
-                      size="md"
-                    >
-                      Login
-                    </Button>
-                  </Link>
-                </>
-              )}
-            </div>
+                </Link>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>

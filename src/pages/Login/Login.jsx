@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 
 const Login = () => {
   const { loginUser, googleLogin, githubLogin, setUser, user } =
     useContext(AuthContext);
+  const location = useLocation();
   const navigate = useNavigate();
   const handleLoginUser = (e) => {
     e.preventDefault();
@@ -15,7 +16,7 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         console.log(result.user);
-        navigate("/");
+        navigate(location.state ? location.state : "/");
         toast.success("Login Successfully");
       })
       .catch((error) => {
@@ -27,8 +28,8 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleLogin().then((result) => {
       toast.success("Login Successfully");
-      navigate("/");
-      setUser(...user, result.photoURL);
+      navigate(location.state ? location.state : "/");
+      setUser(...user, result?.photoURL);
       // photoURL
     });
   };
@@ -36,7 +37,7 @@ const Login = () => {
   const handleGithubLogin = () => {
     githubLogin().then(() => {
       toast.success("Login Successfully");
-      navigate("/");
+      navigate(location.state ? location.state : "/");
     });
   };
   return (
@@ -91,7 +92,11 @@ const Login = () => {
             </svg>
           </button>
 
-          <button onClick={handleGithubLogin} aria-label="Log in with GitHub" className="p-3 rounded-sm">
+          <button
+            onClick={handleGithubLogin}
+            aria-label="Log in with GitHub"
+            className="p-3 rounded-sm"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
