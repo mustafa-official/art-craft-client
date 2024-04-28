@@ -1,6 +1,18 @@
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const AddCraft = () => {
+  const { user } = useContext(AuthContext);
+  const [customizationValue, setCustomizationValue] = useState("");
+  const [stockValue, setStockValue] = useState("");
+  const handleCustomization = (e) => {
+    setCustomizationValue(e.target.value);
+  };
+  const handleStock = (e) => {
+    setStockValue(e.target.value);
+  };
+  // console.log(customizationValue, stockValue);
   const handleAddItem = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -12,8 +24,8 @@ const AddCraft = () => {
     const rating = form.rating.value;
     const processTime = form.processTime.value;
     const image = form.image.value;
-    const customization = form.customization.value;
-    const stockStatus = form.stockStatus.value;
+    const customization = customizationValue;
+    const stockStatus = stockValue;
     const description = form.description.value;
 
     const itemInfo = {
@@ -52,38 +64,39 @@ const AddCraft = () => {
   };
 
   return (
-    <section className="p-6 text-black">
-      <form onSubmit={handleAddItem} className="w-[50%] mx-auto">
+    <section className="p-6">
+      <form
+        onSubmit={handleAddItem}
+        className="w-full mx-auto md:w-[60%] mt-8 lg:mt-6 px-4 md:px-8 py-8 mb-3 lg:mb-5 rounded-xl border border-[#00E661] "
+      >
+        <h1 className="text-2xl font-bold text-center mb-12">Add Craft</h1>
         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
           <div className="col-span-full sm:col-span-3">
             <label className="text-sm">Name</label>
             <input
-              required
+              value={user?.displayName}
               name="name"
               type="text"
-              placeholder="Name"
               className="w-full px-4 py-2 rounded-md  border border-black"
             />
           </div>
           <div className="col-span-full sm:col-span-3">
             <label className="text-sm">Email</label>
             <input
-              required
+              value={user?.email}
               name="email"
               type="email"
-              placeholder="Email"
               className="w-full px-4 py-2 rounded-md  border border-black"
             />
           </div>
         </div>
         <div className="grid mt-4 grid-cols-6 gap-4 col-span-full lg:col-span-3">
           <div className="col-span-full sm:col-span-3">
-            <label className="text-sm">Item</label>
+            <label className="text-sm">Item Name</label>
             <input
               required
               name="itemName"
               type="text"
-              placeholder="Item name"
               className="w-full px-4 py-2 rounded-md  border border-black"
             />
           </div>
@@ -95,7 +108,6 @@ const AddCraft = () => {
               required
               name="subcategory"
               type="text"
-              placeholder="Subcategory name"
               className="w-full px-4 py-2 rounded-md  border border-black"
             />
           </div>
@@ -107,8 +119,7 @@ const AddCraft = () => {
             <input
               required
               name="price"
-              type="number"
-              placeholder="Price"
+              type="text"
               className="w-full px-4 py-2 rounded-md  border border-black"
             />
           </div>
@@ -118,53 +129,76 @@ const AddCraft = () => {
               required
               name="rating"
               type="text"
-              placeholder="Rating"
               className="w-full px-4 py-2 rounded-md  border border-black"
             />
           </div>
         </div>
         <div className="grid mt-4 grid-cols-6 gap-4 col-span-full lg:col-span-3">
           <div className="col-span-full sm:col-span-3">
-            <label className="text-sm">Process</label>
+            <label className="text-sm">Process Time</label>
             <input
               required
               name="processTime"
-              type="number"
-              placeholder="Process time"
+              type="text"
               className="w-full px-4 py-2 rounded-md  border border-black"
             />
           </div>
           <div className="col-span-full sm:col-span-3">
-            <label className="text-sm">Image</label>
+            <label className="text-sm">Image URL</label>
             <input
               required
               name="image"
               type="text"
-              placeholder="Image URL"
               className="w-full px-4 py-2 rounded-md  border border-black"
             />
           </div>
         </div>
         <div className="grid mt-4 grid-cols-6 gap-4 col-span-full lg:col-span-3">
-          <div className="col-span-full sm:col-span-3">
+          {/* <div className="col-span-full sm:col-span-3">
             <label className="text-sm">Customization</label>
             <input
               required
               name="customization"
               type="text"
-              placeholder="Customization"
+           
               className="w-full px-4 py-2 rounded-md  border border-black"
             />
-          </div>
+          </div> */}
           <div className="col-span-full sm:col-span-3">
+            <select
+          required
+              onChange={handleCustomization}
+              className="select border border-black  select-bordered w-full"
+            >
+              <option disabled selected>
+                Select Customization
+              </option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          {/* <div className="col-span-full sm:col-span-3">
             <label className="text-sm">Stock Status</label>
             <input
               required
               name="stockStatus"
               type="text"
-              placeholder="Stock Status"
+          
               className="w-full px-4 py-2 rounded-md  border border-black"
             />
+          </div> */}
+          <div className="col-span-full sm:col-span-3">
+            <select
+            required
+              onChange={handleStock}
+              className="select border border-black select-bordered w-full"
+            >
+              <option disabled selected>
+                Select Stock Status
+              </option>
+              <option value="In Stock">In Stock</option>
+              <option value="Made to Order">Made to Order</option>
+            </select>
           </div>
         </div>
         <div className="mt-6">
@@ -179,8 +213,8 @@ const AddCraft = () => {
 
         <input
           type="submit"
-          value="Add Item"
-          className="bg-black py-2 text-white px-4 cursor-pointer"
+          value="Add Craft"
+          className="bg-[#00E661] text-white rounded-md font-bold py-2 mt-2  px-4 cursor-pointer"
         />
       </form>
     </section>

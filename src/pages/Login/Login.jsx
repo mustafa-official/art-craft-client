@@ -41,8 +41,8 @@ const Login = () => {
     });
   };
   return (
-    <div className="px-5 md:px-10 pt-1 pb-8 lg:px-14 text-black">
-      <div className="w-full mx-auto max-w-md mt-8 lg:mt-6 px-4 md:px-8 py-8 mb-3 lg:mb-5 space-y-2 rounded-xl border border-[#c2227d]">
+    <div className="px-5 md:px-10 pt-1 pb-8 lg:px-14">
+      <div className="w-full mx-auto max-w-md mt-8 lg:mt-6 px-4 md:px-8 py-8 mb-3 lg:mb-5 space-y-2 rounded-xl border border-[#00E661]">
         <h1 className="text-2xl font-bold text-center mb-12">Login</h1>
         <form onSubmit={handleLoginUser} className="space-y-6">
           <div className="space-y-1 text-sm">
@@ -68,13 +68,13 @@ const Login = () => {
               </a>
             </div>
           </div>
-          <button className="block w-full p-3 font-bold text-center text-white rounded-sm  bg-[#FF26A2]">
+          <button className="block w-full p-3 font-bold text-center text-white rounded-sm  bg-[#00E661]">
             Login
           </button>
         </form>
         <div className="flex items-center pt-4 space-x-1">
           <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
-          <p className="px-3 text-sm text-black">Or</p>
+          <p className="px-3 text-sm ">Or</p>
           <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
         </div>
         <div className="flex justify-center space-x-4">
@@ -106,7 +106,7 @@ const Login = () => {
             </svg>
           </button>
         </div>
-        <p className="text-xs text-center sm:px-6 text-black">
+        <p className="text-xs text-center sm:px-6 ">
           Dont have an account?{" "}
           <Link to="/register" className="underline font-bold">
             Register
