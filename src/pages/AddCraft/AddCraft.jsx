@@ -6,11 +6,15 @@ const AddCraft = () => {
   const { user } = useContext(AuthContext);
   const [customizationValue, setCustomizationValue] = useState("");
   const [stockValue, setStockValue] = useState("");
+  const [subcate, setSubcate] = useState("");
   const handleCustomization = (e) => {
     setCustomizationValue(e.target.value);
   };
   const handleStock = (e) => {
     setStockValue(e.target.value);
+  };
+  const handleSubcategory = (e) => {
+    setSubcate(e.target.value);
   };
   // console.log(customizationValue, stockValue);
   const handleAddItem = (e) => {
@@ -19,7 +23,7 @@ const AddCraft = () => {
     const userName = form.name.value;
     const email = form.email.value;
     const itemName = form.itemName.value;
-    const subcategory = form.subcategory.value;
+    const subcategory = subcate;
     const price = form.price.value;
     const rating = form.rating.value;
     const processTime = form.processTime.value;
@@ -91,7 +95,7 @@ const AddCraft = () => {
           </div>
         </div>
         <div className="grid mt-4 grid-cols-6 gap-4 col-span-full lg:col-span-3">
-          <div className="col-span-full sm:col-span-3">
+          <div className="col-span-full">
             <label className="text-sm">Item Name</label>
             <input
               required
@@ -100,7 +104,7 @@ const AddCraft = () => {
               className="w-full px-4 py-2 rounded-md  border border-black"
             />
           </div>
-          <div className="col-span-full sm:col-span-3">
+          {/* <div className="col-span-full sm:col-span-3">
             <label htmlFor="lastname" className="text-sm">
               Subcategory
             </label>
@@ -110,7 +114,24 @@ const AddCraft = () => {
               type="text"
               className="w-full px-4 py-2 rounded-md  border border-black"
             />
-          </div>
+          </div> */}
+        </div>
+        <div className="col-span-full mt-6 sm:col-span-3">
+          <select
+            required
+            onChange={handleSubcategory}
+            className="select border border-black  select-bordered w-full"
+          >
+            <option disabled selected>
+              Select Subcategory
+            </option>
+            <option value="Landscape Painting">Landscape Painting</option>
+            <option value="Portrait Drawing">Portrait Drawing</option>
+            <option value="Watercolour Painting">Watercolour Painting</option>
+            <option value="Oil Painting">Oil Painting</option>
+            <option value="Charcoal Sketching">Charcoal Sketching</option>
+            <option value="Cartoon Drawing">Cartoon Drawing</option>
+          </select>
         </div>
 
         <div className="grid mt-4 grid-cols-6 gap-4 col-span-full lg:col-span-3">
@@ -166,7 +187,7 @@ const AddCraft = () => {
           </div> */}
           <div className="col-span-full sm:col-span-3">
             <select
-          required
+              required
               onChange={handleCustomization}
               className="select border border-black  select-bordered w-full"
             >
@@ -189,7 +210,7 @@ const AddCraft = () => {
           </div> */}
           <div className="col-span-full sm:col-span-3">
             <select
-            required
+              required
               onChange={handleStock}
               className="select border border-black select-bordered w-full"
             >

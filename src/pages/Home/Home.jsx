@@ -2,6 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../../components/Banner/Banner";
 import SingleCraft from "../../components/SingleCraft/SingleCraft";
 import ArtCraftCategories from "./ArtCraftCategories/ArtCraftCategories";
+import Faq from "../../components/Faq/Faq";
+import Contact from "../../components/Contact/Contact";
 
 const Home = () => {
   const allCraft = useLoaderData();
@@ -20,6 +22,8 @@ const Home = () => {
       <div>
         <ArtCraftCategories></ArtCraftCategories>
       </div>
+      <Faq></Faq>
+      <Contact></Contact>
       </div>
       
       

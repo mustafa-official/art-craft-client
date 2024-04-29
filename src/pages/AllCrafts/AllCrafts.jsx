@@ -18,7 +18,7 @@ const AllCrafts = () => {
           </tr>
         </thead>
         {allCraft.map((craft) => (
-          <tbody key={craft._id}>
+          <tbody key={craft._id} className="min-w-full text-[16px]">
             {/* row 1 */}
             <tr>
               <td>
@@ -39,7 +39,7 @@ const AllCrafts = () => {
               <th>
                 <Link
                   to={`/viewDetails/${craft?._id}`}
-                  className="btn text-white bg-[#00E661] btn-sm"
+                  className="btn text-white bg-[#00E661] btn-md"
                 >
                   View Details
                 </Link>
