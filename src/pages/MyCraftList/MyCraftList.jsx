@@ -27,7 +27,7 @@ const MyCraftList = () => {
   // console.log(data);
   // console.log(items);
   return (
-    <div className="min-h-[calc(100vh-8px)]">
+    <div className="min-h-[calc(100vh-80px)]">
       <h2 className="lg:text-4xl text-2xl md:text-3xl text-center mt-6 mb-3 md:mb-8 md:mt-8 font-bold">
         My Art & Craft
       </h2>
