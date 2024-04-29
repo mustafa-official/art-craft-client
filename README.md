@@ -10,5 +10,5 @@ Website: https://art-craft-auth.web.app/
 - Responsive for all devices.
 - Need any information or facing any issue after register then directly contact from Contact Us page.
 
-### selected category: Painting and Drawing
+### Selected category: Painting and Drawing
 

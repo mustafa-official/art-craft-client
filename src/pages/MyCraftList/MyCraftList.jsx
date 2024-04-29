@@ -19,7 +19,9 @@ const MyCraftList = () => {
     fetch(`http://localhost:5000/myValue/${selectValue}`)
       .then((res) => res.json())
       .then((data) => {
-        setItems(data);
+        console.log(data);
+        const filterEmail = data.filter((d) => d.email === user.email);
+        setItems(filterEmail);
       });
   };
   // console.log(data);
@@ -45,7 +47,6 @@ const MyCraftList = () => {
       </div> */}
       <div className="w-44 min-w-[150px] mx-auto">
         <select
-          required
           onChange={handleSelectChange}
           className="select border border-[#00E661] select-bordered w-full"
         >

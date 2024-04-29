@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
-import 'react-tooltip/dist/react-tooltip.css'
+import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
@@ -99,7 +99,7 @@ const Navbar = () => {
 
           <Link to="/">
             <h2 className="text-2xl text-[#00E661] font-black ">
-            Painters Nest
+              Painters Nest
             </h2>
           </Link>
         </div>
@@ -156,7 +156,7 @@ const Navbar = () => {
             <input onChange={handleThemeToggle} type="checkbox" />
             {/* sun icon */}
             <svg
-              className="swap-on fill-current w-6 h-6 md:w-8 md:h-8"
+              className="swap-off fill-current w-6 h-6 md:w-8 md:h-8"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -165,7 +165,7 @@ const Navbar = () => {
 
             {/* moon icon */}
             <svg
-              className="swap-off fill-current w-6 h-6 md:w-8 md:h-8"
+              className="swap-on fill-current w-6 h-6 md:w-8 md:h-8"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -204,7 +204,13 @@ const Navbar = () => {
                         src={user?.photoURL ? user?.photoURL : ""}
                         id="userName"
                       />
-                      <Tooltip className="z-50" variant="info" anchorId="userName" place="top" content={user?.displayName}></Tooltip>
+                      <Tooltip
+                        className="z-50"
+                        variant="info"
+                        anchorId="userName"
+                        place="top"
+                        content={user?.displayName}
+                      ></Tooltip>
                     </div>
                   </div>
                   <ul
@@ -229,6 +235,18 @@ const Navbar = () => {
                     size="md"
                   >
                     Login
+                  </Button>
+                </Link>
+                <Link to="/register">
+                  <Button
+                    className="border-[#00E661] border font-grotesk"
+                    style={{
+                      textTransform: "capitalize",
+                      fontSize: "16px",
+                    }}
+                    size="md"
+                  >
+                    Register
                   </Button>
                 </Link>
               </>

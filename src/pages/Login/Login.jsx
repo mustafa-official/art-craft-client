@@ -4,7 +4,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { loginUser, googleLogin, githubLogin, setUser, user } =
+  const { loginUser, googleLogin, githubLogin,  } =
     useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -26,10 +26,10 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    googleLogin().then((result) => {
+    googleLogin().then(() => {
       toast.success("Login Successfully");
       navigate(location.state ? location.state : "/");
-      setUser(...user, result?.photoURL);
+      // setUser(...user, result?.photoURL);
       // photoURL
     });
   };
