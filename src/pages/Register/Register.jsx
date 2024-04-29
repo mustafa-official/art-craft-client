@@ -26,10 +26,11 @@ const Register = () => {
     }
 
     registerUser(email, password)
-      .then((result) => {
+      .then(() => {
         updateProfileInfo(name, photo).then(() => {
-          console.log(result.user);
+          // console.log(result.user);
           navigate("/");
+          // window.location.reload();
           toast.success("Register Successfully");
         });
       })

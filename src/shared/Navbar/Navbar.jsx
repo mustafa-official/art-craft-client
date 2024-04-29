@@ -98,7 +98,7 @@ const Navbar = () => {
           </div>
 
           <Link to="/">
-            <h2 className="text-2xl text-[#00E661] font-black ">
+            <h2 className="text-xl md:text-2xl text-[#00E661] font-black ">
               Painters Nest
             </h2>
           </Link>
@@ -239,7 +239,7 @@ const Navbar = () => {
                 </Link>
                 <Link to="/register">
                   <Button
-                    className="border-[#00E661] border font-grotesk"
+                    className="border-[#00E661] border font-grotesk md:flex hidden"
                     style={{
                       textTransform: "capitalize",
                       fontSize: "16px",
