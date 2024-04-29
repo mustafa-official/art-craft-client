@@ -14,7 +14,7 @@ const ArtCraftCategories = () => {
   return (
     <div className="grid grid-cols-1 py-5 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {craftCategory.map((singleCraft) => (
-        <Link to={`/craftCategory/${singleCraft?.subcategory}`}
+        <Link to={`/matchSubcategory/${singleCraft?.subcategory}`}
           key={singleCraft?._id}
           className="flex hover:scale-105 transition-all hover:shadow-md-purple flex-col p-4 space-y-6  h-full  border-2 hover:border-[#00E661] border-gray-300 border-t-[#00E661] border-b-[#00e660d7] rounded-md  dark:bg-gray-50 dark:text-gray-800"
         >

@@ -10,7 +10,7 @@ import Register from "../pages/Register/Register";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import CraftViewDetails from "../pages/CraftViewDetails/CraftViewDetails";
 import UpdateMyCraft from "../pages/MyCraftList/UpdateMyCraft";
-
+import MatchSubcategory from "../pages/MatchSubcategory/MatchSubcategory";
 
 const router = createBrowserRouter([
   {
@@ -55,14 +55,20 @@ const router = createBrowserRouter([
       {
         path: "/viewDetails/:id",
         element: <PrivateRoute><CraftViewDetails></CraftViewDetails></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/craft/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/craft/${params.id}`),
       },
       {
         path: "/updateMyCraft/:id",
         element: <UpdateMyCraft></UpdateMyCraft>,
-        loader: ({params})=> fetch(`http://localhost:5000/craft/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/craft/${params.id}`),
+      },
+      {
+        path: "/matchSubcategory/:subcategory",
+        element: <MatchSubcategory></MatchSubcategory>
       }
     ],
-  }
+  },
 ]);
 export default router;

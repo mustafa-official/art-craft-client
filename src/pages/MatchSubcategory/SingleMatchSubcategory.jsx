@@ -1,9 +1,8 @@
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const SingleCraft = ({ craft }) => {
-  // console.log(craft);
-  const { itemName, subcategory, price, image, stockStatus, _id } = craft || {};
+const SingleMatchSubcategory = ({ sub }) => {
+  const { itemName, subcategory, price, image, stockStatus, _id } = sub || {};
   return (
     <div className="flex  hover:shadow-md-purple flex-col p-4 space-y-6  h-full  border-2 hover:border-[#00E661] border-gray-300 border-t-[#00E661] border-b-[#00e660d7] rounded-md  dark:bg-gray-50 dark:text-gray-800">
       <div className="flex-grow">
@@ -16,10 +15,7 @@ const SingleCraft = ({ craft }) => {
         </div>
 
         <h2 className="mb-1 text-xl font-bold">{itemName}</h2>
-        <p
-          
-          className="text-[16px]  flex items-center gap-1 dark:text-white"
-        >
+        <p className="text-[16px]  flex items-center gap-1 dark:text-white">
           {subcategory}
         </p>
       </div>
@@ -50,7 +46,7 @@ const SingleCraft = ({ craft }) => {
   );
 };
 
-export default SingleCraft;
-SingleCraft.propTypes = {
-  craft: PropTypes.object,
+export default SingleMatchSubcategory;
+SingleMatchSubcategory.propTypes = {
+  sub: PropTypes.object,
 };

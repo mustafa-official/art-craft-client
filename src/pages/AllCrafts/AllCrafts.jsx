@@ -2,10 +2,10 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const AllCrafts = () => {
   const allCraft = useLoaderData();
-  console.log(allCraft);
+  // console.log(allCraft);
   return (
-    <div className="mx-auto md:pl-9">
-      <h2 className="lg:text-4xl text-2xl md:text-3xl text-center mt-6 mb-3 md:mb-6 md:mt-8 font-bold">All Art & Craft</h2>
+    <div className="mx-auto md:pl-9 md:my-8">
+      <h2 className="lg:text-4xl text-2xl md:text-3xl text-center my-6 mb-3 font-bold">All Art & Craft</h2>
       <div className="overflow-x-auto">
       <table className="table">
         {/* head */}

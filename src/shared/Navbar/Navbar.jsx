@@ -1,12 +1,14 @@
-import { Button, Tooltip } from "@material-tailwind/react";
+import { Button } from "@material-tailwind/react";
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark"
   );
   const { user, logoutUser } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -18,9 +20,9 @@ const Navbar = () => {
   };
   const handleThemeToggle = (e) => {
     if (e.target.checked) {
-      setTheme("dark");
-    } else {
       setTheme("light");
+    } else {
+      setTheme("dark");
     }
   };
   useEffect(() => {
@@ -39,7 +41,6 @@ const Navbar = () => {
               className="btn  btn-ghost lg:hidden"
             >
               <svg
-                
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
                 fill="none"
@@ -97,7 +98,9 @@ const Navbar = () => {
           </div>
 
           <Link to="/">
-            <h2 className="text-xl text-[#00E661] font-bold ">Painting & Drawing</h2>
+            <h2 className="text-xl text-[#00E661] font-bold ">
+              Painting & Drawing
+            </h2>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -106,7 +109,9 @@ const Navbar = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? "  font-bold text-[#00E661]" : ""
+                  isActive
+                    ? "  font-bold text-[#00E661]"
+                    : "hover:text-[#00E661]"
                 }
               >
                 Home
@@ -114,7 +119,9 @@ const Navbar = () => {
               <NavLink
                 to="/allCrafts"
                 className={({ isActive }) =>
-                  isActive ? "  font-bold text-[#00E661]" : ""
+                  isActive
+                    ? "  font-bold text-[#00E661]"
+                    : "hover:text-[#00E661]"
                 }
               >
                 All Art & craft
@@ -122,7 +129,9 @@ const Navbar = () => {
               <NavLink
                 to="/addCraft"
                 className={({ isActive }) =>
-                  isActive ? "  font-bold text-[#00E661]" : ""
+                  isActive
+                    ? "  font-bold text-[#00E661]"
+                    : "hover:text-[#00E661]"
                 }
               >
                 Add Craft
@@ -130,7 +139,9 @@ const Navbar = () => {
               <NavLink
                 to="/myCraftList"
                 className={({ isActive }) =>
-                  isActive ? "  font-bold text-[#00E661]" : ""
+                  isActive
+                    ? "  font-bold text-[#00E661]"
+                    : "hover:text-[#00E661]"
                 }
               >
                 My Art & Craft
@@ -188,16 +199,12 @@ const Navbar = () => {
                     className="btn btn-ghost btn-circle avatar"
                   >
                     <div className="w-10 rounded-full">
-                      <Tooltip
-                        className="bg-[#00E661] font-bold"
-                        content={user.displayName}
-                        placement="bottom"
-                      >
-                        <img
-                          alt="Tailwind CSS Navbar component"
-                          src={user?.photoURL ? user?.photoURL : ""}
-                        />
-                      </Tooltip>
+                      <img
+                        alt="Tailwind CSS Navbar component"
+                        src={user?.photoURL ? user?.photoURL : ""}
+                        id="userName"
+                      />
+                      <Tooltip className="z-50" variant="info" anchorId="userName" place="top" content={user?.displayName}></Tooltip>
                     </div>
                   </div>
                   <ul

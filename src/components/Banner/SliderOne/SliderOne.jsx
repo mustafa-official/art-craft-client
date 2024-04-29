@@ -1,3 +1,4 @@
+import { Typewriter } from "react-simple-typewriter";
 import banner from "../../../assets/painting.jpg";
 
 const SliderOne = () => {
@@ -11,7 +12,19 @@ const SliderOne = () => {
         <div className="max-w-3xl">
           <h1 className="mb-5 px-3 text-3xl md:text-5xl text-[#dbdbdb] font-black">
             Discover Affordable Artworks
-            <span className="block text-[#00E661]">Today</span>
+            <span className="block" style={{ color: '#00E661', fontWeight: 'bold' }}>
+            <Typewriter
+            words={['Today!', 'Tomorrow!']}
+            loop={false}
+            cursor
+            cursorStyle='|'
+            typeSpeed={50}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            
+          />
+            </span>
+            {/* <span className="block text-[#00E661]">Today</span> */}
           </h1>
           <p className="mb-5 px-4 text-[#dbdbdb] flex-wrap max-w-xl mx-auto text-[18px]">
             Explore a curated collection of original artworks, ranging from

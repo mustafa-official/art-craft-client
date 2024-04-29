@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FiStar } from "react-icons/fi";
 import PropTypes from "prop-types";
 import Swal from "sweetalert2";
 const MySingleCraft = ({ item, setItems, items }) => {
@@ -47,8 +48,8 @@ const MySingleCraft = ({ item, setItems, items }) => {
 
         <h2 className="mb-1 text-xl font-bold">{itemName}</h2>
         <hr className="my-4" />
-        <div className="flex flex-wrap items-center justify-between">
-          <p className="p-2 text-center font-bold">{customization}</p>
+        <div className="flex flex-col md:flex-row items-center justify-between">
+          <p className="p-2 text-center font-bold">Customization: {customization}</p>
           <p className="font-medium">{stockStatus}</p>
         </div>
       </div>
@@ -59,7 +60,7 @@ const MySingleCraft = ({ item, setItems, items }) => {
         </div>
         <div className="flex items-center gap-2 dark:text-gray-600">
           <div className="flex items-center gap-2">
-            <p className="font-medium">{rating}</p>
+            <p className="font-medium flex items-center gap-1">{rating} <FiStar></FiStar></p>
           </div>
         </div>
       </div>
