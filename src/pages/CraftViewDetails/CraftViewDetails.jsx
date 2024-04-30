@@ -58,20 +58,20 @@ const CraftViewDetails = () => {
         <img className="rounded-md w-full" src={image} alt="" />
       </div>
       <div>
-        <h1 className="text-3xl font-bold">{itemName}</h1>
-        <p className="py-3">{description}</p>
-        <div className="flex items-center gap-3 lg:gap-6">
+        <h1 className="text-2xl font-bold">{itemName}</h1>
+        <p className="text-[16px] py-3">{description}</p>
+        <div className="flex items-center gap-2 lg:gap-6">
             <div className="space-y-3">
-              <p className="text-[14px] lg:text-[18px]">Subcategory:</p>
-              <p className="text-[14px] lg:text-[18px]">Customization:</p>
-              <p className="text-[14px] lg:text-[18px]">Name:</p>
-              <p className="text-[14px] lg:text-[18px]">Email:</p>
-              <p className="text-[14px] lg:text-[18px]">Stock Status:</p>
-              <p className="text-[14px] lg:text-[18px]">Process Time:</p>
-              <p className="text-[14px] lg:text-[18px]">Rating:</p>
-              <p className="text-[14px] lg:text-[18px]">Price:</p>
+              <p className="text-[14px] flex gap-2 items-center flex-wrap lg:text-[18px]">Subcategory:<span> {subcategory}</span></p>
+              <p className="text-[14px] flex gap-2 items-center flex-wrap lg:text-[18px]">Customization:<span> {customization}</span></p>
+              <p className="text-[14px] flex gap-2 items-center flex-wrap lg:text-[18px]">Name: <span> {userName}</span></p>
+              <p className="text-[14px] flex gap-2 items-center flex-wrap lg:text-[18px]">Email: <span> {email}</span></p>
+              <p className="text-[14px] flex gap-2 items-center flex-wrap lg:text-[18px]">Stock Status:<span> {stockStatus}</span></p>
+              <p className="text-[14px] flex gap-2 items-center flex-wrap lg:text-[18px]">Process Time:<span> {processTime}</span></p>
+              <p className="text-[14px] flex gap-2 items-center flex-wrap lg:text-[18px]">Rating:<span> {rating}</span></p>
+              <p className="text-[14px] flex gap-2 items-center flex-wrap lg:text-[18px]">Price:<span> ${price}</span></p>
             </div>
-            <div className="space-y-3 flex-wrap">
+            {/* <div className="space-y-3 flex-wrap">
               <p className="text-[14px] lg:text-[18px]">{subcategory}</p>
               <p className="text-[14px] lg:text-[18px]">{customization}</p>
               <p className="text-[14px] lg:text-[18px]">{userName}</p>
@@ -80,7 +80,7 @@ const CraftViewDetails = () => {
               <p className="text-[14px] lg:text-[18px]">{processTime}</p>
               <p className="text-[14px] lg:text-[18px]">{rating}</p>
               <p className="text-[14px] lg:text-[18px]">${price}</p>
-            </div>
+            </div> */}
           </div>
       </div>
     </div>
