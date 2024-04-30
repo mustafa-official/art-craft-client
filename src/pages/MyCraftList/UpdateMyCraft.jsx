@@ -59,7 +59,7 @@ const UpdateMyCraft = () => {
       description,
     };
     // console.log(updateInfo);
-    fetch(`http://localhost:5000/craft/${_id}`, {
+    fetch(`https://art-and-craft-server-mu.vercel.app/craft/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

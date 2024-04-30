@@ -7,7 +7,7 @@ const MyCraftList = () => {
   const [items, setItems] = useState([]);
   // const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/myCraft/${user?.email}`)
+    fetch(`https://art-and-craft-server-mu.vercel.app/myCraft/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
@@ -16,7 +16,7 @@ const MyCraftList = () => {
 
   const handleSelectChange = (e) => {
     const selectValue = e.target.value;
-    fetch(`http://localhost:5000/myValue/${selectValue}`)
+    fetch(`https://art-and-craft-server-mu.vercel.app/myValue/${selectValue}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
