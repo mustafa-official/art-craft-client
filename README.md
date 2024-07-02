@@ -1,7 +1,7 @@
 # Painters Nest
 #### This is an art and craft store website. Logged-in users can showcase, update, and remove their crafts on the 'Add Craft' and 'My Art & Craft' pages, with customizable filtering options.
 
-Website: https://art-craft-auth.web.app/
+Live Link: https://art-craft-auth.web.app/
 
 ## Features
 - After logging in, users can add their craft on the 'Add Craft' page.
