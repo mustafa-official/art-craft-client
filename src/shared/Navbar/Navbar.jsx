@@ -57,14 +57,14 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu z-50 menu-sm backdrop-blur-lg text-white dropdown-content p-2 border border-[#00E661]   mt-4 rounded-box min-h-[calc(100vh-80px)] w-56"
+              className="menu z-50 menu-sm backdrop-blur-lg text-white dropdown-content p-2 border border-[#0ad45f]   mt-4 rounded-box min-h-[calc(100vh-80px)] w-56"
             >
               <div className="flex lg:justify-normal justify-center lg:flex-row flex-col lg:mt-0 mt-4 items-center gap-3">
                 {/* navlink for phone */}
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    isActive ? "  font-bold text-[#00E661]" : ""
+                    isActive ? "  font-bold text-[#0ad45f]" : ""
                   }
                 >
                   Home
@@ -72,7 +72,7 @@ const Navbar = () => {
                 <NavLink
                   to="/allCrafts"
                   className={({ isActive }) =>
-                    isActive ? "  font-bold text-[#00E661]" : ""
+                    isActive ? "  font-bold text-[#0ad45f]" : ""
                   }
                 >
                   All Art & craft
@@ -80,7 +80,7 @@ const Navbar = () => {
                 <NavLink
                   to="/addCraft"
                   className={({ isActive }) =>
-                    isActive ? "  font-bold text-[#00E661]" : ""
+                    isActive ? "  font-bold text-[#0ad45f]" : ""
                   }
                 >
                   Add Craft
@@ -88,7 +88,7 @@ const Navbar = () => {
                 <NavLink
                   to="/myCraftList"
                   className={({ isActive }) =>
-                    isActive ? "  font-bold text-[#00E661]" : ""
+                    isActive ? "  font-bold text-[#0ad45f]" : ""
                   }
                 >
                   My Art & Craft
@@ -98,7 +98,7 @@ const Navbar = () => {
           </div>
 
           <Link to="/">
-            <h2 className="text-xl md:text-2xl text-[#00E661] font-black ">
+            <h2 className="text-xl md:text-2xl text-[#0ad45f] font-black ">
               Painters Nest
             </h2>
           </Link>
@@ -110,8 +110,8 @@ const Navbar = () => {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "  font-bold text-[#00E661]"
-                    : "hover:text-[#00E661]"
+                    ? "  font-bold text-[#0ad45f]"
+                    : "hover:text-[#0ad45f]"
                 }
               >
                 Home
@@ -120,8 +120,8 @@ const Navbar = () => {
                 to="/allCrafts"
                 className={({ isActive }) =>
                   isActive
-                    ? "  font-bold text-[#00E661]"
-                    : "hover:text-[#00E661]"
+                    ? "  font-bold text-[#0ad45f]"
+                    : "hover:text-[#0ad45f]"
                 }
               >
                 All Art & craft
@@ -130,8 +130,8 @@ const Navbar = () => {
                 to="/addCraft"
                 className={({ isActive }) =>
                   isActive
-                    ? "  font-bold text-[#00E661]"
-                    : "hover:text-[#00E661]"
+                    ? "  font-bold text-[#0ad45f]"
+                    : "hover:text-[#0ad45f]"
                 }
               >
                 Add Craft
@@ -140,8 +140,8 @@ const Navbar = () => {
                 to="/myCraftList"
                 className={({ isActive }) =>
                   isActive
-                    ? "  font-bold text-[#00E661]"
-                    : "hover:text-[#00E661]"
+                    ? "  font-bold text-[#0ad45f]"
+                    : "hover:text-[#0ad45f]"
                 }
               >
                 My Art & Craft
@@ -176,9 +176,9 @@ const Navbar = () => {
           <div className="flex items-center gap-3 lg:flex">
             {/* {user && (
               <div className="avatar">
-                <div className={`w-10 rounded-full border-2 border-[#00E661]`}>
+                <div className={`w-10 rounded-full border-2 border-[#0ad45f]`}>
                   <Tooltip
-                    className="bg-[#00E661] font-bold"
+                    className="bg-[#0ad45f] font-bold"
                     content={user.displayName}
                     placement="bottom"
                   >
@@ -215,7 +215,7 @@ const Navbar = () => {
                   </div>
                   <ul
                     tabIndex={0}
-                    className="mt-3 z-[1] p-2 shadow-md rounded-md border border-[#00E661] menu menu-sm  dropdown-content bg-base-200 w-52"
+                    className="mt-3 z-[1] p-2 shadow-md rounded-md border border-[#0ad45f] menu menu-sm  dropdown-content bg-base-200 w-52"
                   >
                     <li>
                       <button onClick={handleLogout}>Logout</button>
@@ -227,7 +227,7 @@ const Navbar = () => {
               <>
                 <Link to="/login">
                   <Button
-                    className="bg-[#00E661] font-grotesk"
+                    className="bg-[#0ad45f] font-grotesk"
                     style={{
                       textTransform: "capitalize",
                       fontSize: "16px",
@@ -239,7 +239,7 @@ const Navbar = () => {
                 </Link>
                 <Link to="/register">
                   <Button
-                    className="border-[#00E661] border font-grotesk md:flex hidden"
+                    className="border-[#0ad45f] border font-grotesk md:flex hidden"
                     style={{
                       textTransform: "capitalize",
                       fontSize: "16px",

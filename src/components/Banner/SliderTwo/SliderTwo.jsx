@@ -11,7 +11,7 @@ const SliderTwo = () => {
         <div className="max-w-3xl">
           <h1 className="mb-5 px-3 text-3xl md:text-5xl text-[#dbdbdb] font-black">
             Exclusive Offers on Original
-            <span className="block text-[#00E661]">Artworks</span>
+            <span className="block text-[#0ad45f]">Artworks</span>
           </h1>
           <p className="mb-5 px-4 text-[#dbdbdb] flex-wrap max-w-xl mx-auto text-[18px]">
             Explore a curated collection of original artworks, ranging from

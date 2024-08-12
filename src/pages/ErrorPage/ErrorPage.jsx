@@ -16,7 +16,7 @@ const ErrorPage = () => {
           </p>
           <Link
             to="/"
-            className="px-4 py-3 font-semibold rounded bg-[#00E661] "
+            className="px-4 py-3 font-semibold rounded bg-[#0ad45f] "
           >
             Back to homepage
           </Link>

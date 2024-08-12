@@ -71,7 +71,7 @@ const AddCraft = () => {
     <section className="p-6">
       <form
         onSubmit={handleAddItem}
-        className="w-full mx-auto md:w-[60%] mt-8 lg:mt-6 px-4 md:px-8 py-8 mb-3 lg:mb-5 rounded-xl border border-[#00E661] "
+        className="w-full mx-auto md:w-[60%] mt-8 lg:mt-6 px-4 md:px-8 py-8 mb-3 lg:mb-5 rounded-xl border border-[#0ad45f] "
       >
         <h1 className="text-2xl font-bold text-center mb-12">Add Craft</h1>
         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
@@ -235,7 +235,7 @@ const AddCraft = () => {
         <input
           type="submit"
           value="Add Craft"
-          className="bg-[#00E661] text-white rounded-md font-bold py-2 mt-2  px-4 cursor-pointer"
+          className="bg-[#0ad45f] text-white rounded-md font-bold py-2 mt-2  px-4 cursor-pointer"
         />
       </form>
     </section>

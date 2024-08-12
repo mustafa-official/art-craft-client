@@ -48,7 +48,7 @@ const MyCraftList = () => {
       <div className="w-44 min-w-[150px] mx-auto">
         <select
           onChange={handleSelectChange}
-          className="select border border-[#00E661] select-bordered w-full"
+          className="select border border-[#0ad45f] select-bordered w-full"
         >
           <option selected disabled>
             Customization

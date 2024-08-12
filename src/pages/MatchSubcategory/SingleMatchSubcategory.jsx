@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const SingleMatchSubcategory = ({ sub }) => {
   const { itemName, subcategory, price, image, stockStatus, _id } = sub || {};
   return (
-    <div className="flex  hover:shadow-md-purple flex-col p-4 space-y-6  h-full  border-2 hover:border-[#00E661] border-gray-300 border-t-[#00E661] border-b-[#00e660d7] rounded-md  dark:bg-gray-50 dark:text-gray-800">
+    <div className="flex  hover:shadow-md-purple flex-col p-4 space-y-6  h-full  border-2 hover:border-[#0ad45f] border-gray-300 border-t-[#0ad45f] border-b-[#00e660d7] rounded-md  dark:bg-gray-50 dark:text-gray-800">
       <div className="flex-grow">
         <div className="rounded-lg">
           <img
@@ -33,12 +33,12 @@ const SingleMatchSubcategory = ({ sub }) => {
       <div>
         <Link
           to={`/viewDetails/${_id}`}
-          className="px-5 text-center border border-[#00E661] text-white py-2.5 relative rounded group font-medium w-full   inline-block"
+          className="px-5 text-center border border-[#0ad45f] text-white py-2.5 relative rounded group font-medium w-full   inline-block"
         >
-          <span className="absolute top-0 left-0 w-full h-full rounded opacity-60 filter blur-sm bg-gradient-to-br from-[#00E661] to-gray-900"></span>
-          <span className="h-full w-full inset-0 absolute mt-0.5 ml-0.5 filter group-active:opacity-0 rounded opacity-60 from-[#00E661] to-gray-900"></span>
-          <span className="absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-[#00E661] to-gray-900"></span>
-          <span className="absolute inset-0 w-full h-full transition duration-200 ease-out rounded bg-gradient-to-br to-[#00E661] from-black"></span>
+          <span className="absolute top-0 left-0 w-full h-full rounded opacity-60 filter blur-sm bg-gradient-to-br from-[#0ad45f] to-gray-900"></span>
+          <span className="h-full w-full inset-0 absolute mt-0.5 ml-0.5 filter group-active:opacity-0 rounded opacity-60 from-[#0ad45f] to-gray-900"></span>
+          <span className="absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-[#0ad45f] to-gray-900"></span>
+          <span className="absolute inset-0 w-full h-full transition duration-200 ease-out rounded bg-gradient-to-br to-[#0ad45f] from-black"></span>
           <span className="relative">View Details</span>
         </Link>
       </div>
